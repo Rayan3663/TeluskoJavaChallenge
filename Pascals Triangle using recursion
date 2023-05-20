@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class recursion {
+
+    public static void pascal(int n) {
+
+    }
+
+    public static int pascalTriangleRecursive(int i, int j) {
+        if (j == 0 || j == i) {
+            return 1;
+        } else {
+            return pascalTriangleRecursive(i - 1, j - 1) + pascalTriangleRecursive(i - 1, j);
+        }
+    }
+
+    static Scanner sc = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        System.out.println("Enter the number of rows");
+        int n = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print(pascalTriangleRecursive(i, j));
+            }
+            System.out.println("");
+        }
+
+    }
+}
